@@ -1,0 +1,52 @@
+{
+  "kind": "collectionType",
+  "collectionName": "institutions",
+  "info": {
+    "singularName": "institution",
+    "pluralName": "institutions",
+    "displayName": "Institution",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "institutionId": {
+      "type": "uid",
+      "required": true
+    },
+    "name": {
+      "type": "string",
+      "unique": true
+    },
+    "address": {
+      "type": "string"
+    },
+    "taxCode": {
+      "type": "string"
+    },
+    "logo": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "departments": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::department.department",
+      "mappedBy": "institution"
+    },
+    "Representers": {
+      "type": "component",
+      "repeatable": true,
+      "component": "person.representer"
+    }
+  }
+}

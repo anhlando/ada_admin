@@ -1,0 +1,22 @@
+{
+  "collectionName": "components_person_representers",
+  "info": {
+    "displayName": "Representer",
+    "icon": "user"
+  },
+  "options": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "phone": {
+      "type": "string"
+    },
+    "title": {
+      "type": "string"
+    },
+    "email": {
+      "type": "email"
+    }
+  }
+}
