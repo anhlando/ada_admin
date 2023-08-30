@@ -1,0 +1,30 @@
+{
+  "collectionName": "components_sale_promotions",
+  "info": {
+    "displayName": "promotion",
+    "icon": "gift"
+  },
+  "options": {},
+  "attributes": {
+    "discountCode": {
+      "type": "string",
+      "unique": true,
+      "required": true,
+      "minLength": 3,
+      "maxLength": 10
+    },
+    "type": {
+      "type": "enumeration",
+      "enum": [
+        "percentage",
+        "cash"
+      ],
+      "default": "cash"
+    },
+    "value": {
+      "type": "integer",
+      "required": true,
+      "max": 100000
+    }
+  }
+}

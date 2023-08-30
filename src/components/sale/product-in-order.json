@@ -1,0 +1,24 @@
+{
+  "collectionName": "components_sale_product_in_orders",
+  "info": {
+    "displayName": "ProductInOrder",
+    "icon": "file",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "product": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::product.product"
+    },
+    "price": {
+      "type": "biginteger"
+    },
+    "promotion": {
+      "type": "component",
+      "repeatable": false,
+      "component": "sale.promotion"
+    }
+  }
+}
