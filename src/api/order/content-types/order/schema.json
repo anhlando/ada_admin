@@ -16,12 +16,6 @@
       "type": "uid",
       "required": true
     },
-    "users_permissions_user": {
-      "type": "relation",
-      "relation": "manyToOne",
-      "target": "plugin::users-permissions.user",
-      "inversedBy": "orders"
-    },
     "product": {
       "type": "component",
       "repeatable": true,
@@ -54,6 +48,12 @@
     },
     "notes": {
       "type": "richtext"
+    },
+    "expectedDeliveryDate": {
+      "type": "date"
+    },
+    "userId": {
+      "type": "biginteger"
     }
   }
 }

@@ -86,11 +86,10 @@
       "type": "boolean",
       "default": false
     },
-    "orders": {
+    "department": {
       "type": "relation",
-      "relation": "oneToMany",
-      "target": "api::order.order",
-      "mappedBy": "users_permissions_user"
+      "relation": "oneToOne",
+      "target": "api::department.department"
     }
   }
 }

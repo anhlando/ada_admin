@@ -51,6 +51,25 @@
       "relation": "manyToMany",
       "target": "api::department.department",
       "inversedBy": "products"
+    },
+    "category": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::category.category",
+      "inversedBy": "products"
+    },
+    "linkToDownload": {
+      "type": "string"
+    },
+    "fileToDownload": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": true
     }
   }
 }
