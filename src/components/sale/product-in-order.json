@@ -12,13 +12,8 @@
       "relation": "oneToOne",
       "target": "api::product.product"
     },
-    "price": {
+    "suggestedPrice": {
       "type": "biginteger"
-    },
-    "promotion": {
-      "type": "component",
-      "repeatable": false,
-      "component": "sale.promotion"
     }
   }
 }

@@ -1,0 +1,33 @@
+{
+  "kind": "collectionType",
+  "collectionName": "promotions",
+  "info": {
+    "singularName": "promotion",
+    "pluralName": "promotions",
+    "displayName": "Promotion"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "voucherCode": {
+      "type": "string",
+      "unique": true,
+      "required": true
+    },
+    "type": {
+      "type": "enumeration",
+      "enum": [
+        "cash",
+        "percentage"
+      ]
+    },
+    "value": {
+      "type": "integer"
+    },
+    "expiryDate": {
+      "type": "date"
+    }
+  }
+}

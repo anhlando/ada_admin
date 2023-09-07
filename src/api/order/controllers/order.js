@@ -1,6 +1,6 @@
 'use strict';
 
-const { nanoid } = require('nanoid');
+const helper = require('../services/helper')
 /**
  * order controller
  */
@@ -27,11 +27,26 @@ module.exports = createCoreController('api::order.order', ({strapi}) => ({
         ctx.request.body.data = {
             ...ctx.request.body.data,
             userId: ctx.state.user.id,
-            orderId: nanoid(),
+            orderId: helper.generateOrderID(ctx.state.user.id),  //orderID format: 'userID-Date.now()'.toBase64
         }
         // @ts-ignore
         const response = await super.create(ctx);
         return response;
+      },
+      async update(ctx) {
+        if (!ctx.state.user || !ctx.state.user.id) {
+          return ctx.response.status = 401;
+        }
+        const {filters} = ctx.query;
+        ctx.query = {
+          ...ctx.query,
+          filters: {
+            ...filters,
+            userId: ctx.state.user.id
+          }
+        };
+        // @ts-ignore
+        return await super.update(ctx);
       }
 }));
  
