@@ -41,11 +41,6 @@
     "totalValue": {
       "type": "biginteger"
     },
-    "promotion": {
-      "type": "component",
-      "repeatable": false,
-      "component": "sale.promotion"
-    },
     "notes": {
       "type": "richtext"
     },
@@ -54,6 +49,11 @@
     },
     "userId": {
       "type": "biginteger"
+    },
+    "promotion": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::promotion.promotion"
     }
   }
 }
